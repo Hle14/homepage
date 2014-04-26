@@ -20,13 +20,35 @@ function fadeIn(element_id){
 		//element.
 	}
 }
+/*
+document.onload = initVars();
 
 function initVars(){
-	var portrait = document.getElementById('portrait');
+	var portrait = document.getElementById("portrait");
 
-	document.getElementById('btn-home').onclick = function(){portrait.src='gnome.png'};
-	document.getElementById('btn-projects').onclick = function(){portrait.src='SC_cat.jpg'};
-	document.getElementById('btn-blog').onclick = function(){portrait.src='shyguy_avatar.jpg'};
+	document.getElementById("btn-home").onclick = changeGnome;
+	document.getElementById("btn-projects").onclick = changeCat;
+	document.getElementById("btn-blog").onclick = changeShyGuy;
 }
+*/
 
-document.onload = initVars();
+
+var changeGnome = function(){
+	document.getElementById("portrait").src = "gnome.png";
+}
+var changeCat = function(){
+	document.getElementById("portrait").src = "SC_cat.jpg";
+}
+var changeShyGuy = function(){
+	document.getElementById("portrait").src = "shyguy_avatar.jpg";
+}
+window.onload = function(){
+	alert('BLARGH');
+	var home = document.getElementById("btn-home");
+	var proj = document.getElementById("btn-projects");
+	var blog = document.getElementById("btn-blog");
+
+	home.addEventListener("click",changeGnome,false);
+	proj.addEventListener("click",changeCat,false);
+	blog.addEventListener("click",changeShyGuy,false);
+};
