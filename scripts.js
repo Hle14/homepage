@@ -21,8 +21,12 @@ function fadeIn(element_id){
 	}
 }
 
-var portrait = document.getElementById('portrait');
+function initVars(){
+	var portrait = document.getElementById('portrait');
 
-document.getElementById('btn-home').onclick = function(){portrait.src='gnome.png'};
-document.getElementById('btn-projects').onclick = function(){portrait.src='SC_cat.jpg'};
-document.getElementById('btn-blog').onclick = function(){portrait.src='shyguy_avatar.jpg'};
+	document.getElementById('btn-home').onclick = function(){portrait.src='gnome.png'};
+	document.getElementById('btn-projects').onclick = function(){portrait.src='SC_cat.jpg'};
+	document.getElementById('btn-blog').onclick = function(){portrait.src='shyguy_avatar.jpg'};
+}
+
+document.onload = initVars();
