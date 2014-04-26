@@ -1,0 +1,18 @@
+start all gray, click here in middle of screen
+
+click
+	gray smoothly collapses to left and becomes menu-bar background
+	menu items fade in one at a time (fade-in + translate or just fade-in)
+
+	fadeIn quadratic function
+		alpha = Ax^2 + Bx + C
+			100 = A(1^2) + B(1) + 0
+			100 = A + B
+			0 = A(2^2) + B(2) + 0
+			4A = -2B
+			B = -2A
+			100 = -A
+			A = -100
+			B = 200
+
+		alpha = -100x^2 + 200x ; where x is in seconds
