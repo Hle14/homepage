@@ -8,19 +8,24 @@ max-height: 100%;
 }
 
 #framecontent{
-position: absolute;
-top: 0;
-bottom: 0; 
-left: 0;
-width: 200px; /*Width of frame div*/
-height: 100%;
-overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
-background: DimGray;
-color: white;
-text-align: right;
-font-family: "Lucida Console"
+	position: absolute;
+	top: 0;
+	bottom: 0; 
+	left: 0;
+	width: 200px; /*Width of frame div*/
+	height: 100%;
+	overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+	background: DimGray;
+	color: white;
+	text-align: right;
+	font-family: "Lucida Console"
 }
 
+#portrait{
+	height:auto;
+	width:100%;
+	opacity:0.0; /*will change on page load*/
+}
 .menu_name{
 	font-size:40px;
 }

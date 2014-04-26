@@ -6,18 +6,39 @@ document.write(gibberish[Math.floor(Math.random()*3)]+" ")
 }
 
 var d = new Date();
-
+var timer;
 function fadeIn(element_id){
+	//alert("fadeIn called");
+	var element = document.getElementById(element_id);
+	timer = setInterval(fadeShift(element),200);
+};
+
+function fadeShift(element){
+	//alert("fadeShift called");
+	if(element.style.opacity == 1.0)
+	{
+		//clearInterval(timer);
+		clearInterval();
+	} else
+	{
+		element.style.opacity += 0.1;
+
+	}
+};
+
+/*
+var fadeIn = function(element_id){
 	//quadratic function controls alpha level
 	var element = document.getElementById(element_id);
 	var time0 = d.getTime();
+	alert(time0);
 	var x = 0;
 	var alpha = 0;
 	while(x < 1.0) //changes alpha level over time
 	{
 		x = (d.getTime() - time0) / 1000;
-		alpha = -100*x*x + 200*x;
-		//element.
+		alpha = (-1*x*x + 2*x);
+		element.style.opacity = alpha;
 	}
 }
 /*
@@ -43,6 +64,8 @@ var changeShyGuy = function(){
 	document.getElementById("portrait").src = "shyguy_avatar.jpg";
 }
 window.onload = function(){
+	fadeIn("portrait");
+
 	var home = document.getElementById("btn-home");
 	var proj = document.getElementById("btn-projects");
 	var blog = document.getElementById("btn-blog");
