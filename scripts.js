@@ -17,7 +17,7 @@ function fadeIn(element_id){
 	{
 		x = (d.getTime() - time0) / 1000;
 		alpha = -100*x*x + 200*x;
-		element.
+		//element.
 	}
 }
 
