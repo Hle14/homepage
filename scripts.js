@@ -26,10 +26,3 @@ var portrait = document.getElementById('portrait');
 document.getElementById('btn-home').onclick = function(){portrait.src='gnome.png'};
 document.getElementById('btn-projects').onclick = function(){portrait.src='SC_cat.jpg'};
 document.getElementById('btn-blog').onclick = function(){portrait.src='shyguy_avatar.jpg'};
-
-/*
-var home_btn = document.getElementById('btn-home');
-home_btn.onclick = function(){home_btn.src='gnome.png'};
-var proj_btn = document.getElementById('btn-projects');
-proj_btn.onclick = function(){_btn.src='gnome.png'};
-*/
