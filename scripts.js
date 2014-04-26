@@ -23,12 +23,9 @@ function fadeIn(element_id){
 
 var portrait = document.getElementById('portrait');
 
-var btn_home = document.getElementById('btn-home');
-var btn_projects = document.getElementById('btn-projects');
-var btn_blog = document.getElementById('btn-blog');
-btn_home.onclick = function(){portrait.src='gnome.png'};
-btn_projects.onclick = function(){portrait.src='SC_cat.jpg'};
-btn_blog.onclick = function(){portrait.src='shyguy_avatar.jpg'};
+document.getElementById('btn-home').onclick = function(){portrait.src='gnome.png'};
+document.getElementById('btn-projects').onclick = function(){portrait.src='SC_cat.jpg'};
+document.getElementById('btn-blog').onclick = function(){portrait.src='shyguy_avatar.jpg'};
 
 /*
 var home_btn = document.getElementById('btn-home');
