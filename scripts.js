@@ -43,7 +43,6 @@ var changeShyGuy = function(){
 	document.getElementById("portrait").src = "shyguy_avatar.jpg";
 }
 window.onload = function(){
-	alert('BLARGH');
 	var home = document.getElementById("btn-home");
 	var proj = document.getElementById("btn-projects");
 	var blog = document.getElementById("btn-blog");
