@@ -1,3 +1,15 @@
+/* LINKS:
+
+javascript multiple animations
+
+http://www.schillmania.com/content/projects/javascript-animation-1/
+
+http://hle14.github.io/homepage/
+
+*/
+
+
+
 /*** Temporary text filler function. Remove when deploying template. ***/
 var gibberish=["This is just some filler text", "Welcome to Dynamic Drive CSS Library", "Demo content nothing to read here"]
 function filltext(words){
@@ -12,8 +24,8 @@ var loads_index = 0;
 var fadeEffect=function(){
 	return{
 		init:function(id, flag, target){
-			this.elem = document.getElementById(id);
-			clearInterval(this.elem.si);
+			this.elem = document.getElementById(id); //get the item to be animated
+			clearInterval(this.elem.si); //clear the current recurring timer
 			this.target = target ? target : flag ? 100 : 0;
 			this.flag = flag || -1;
 			this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
@@ -39,7 +51,7 @@ var fadeEffect=function(){
 			}
 		}
 	}
-}();
+};
 
 
 var changeGnome = function(){
