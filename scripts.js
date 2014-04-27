@@ -7,7 +7,7 @@ document.write(gibberish[Math.floor(Math.random()*3)]+" ")
 
 
 
-
+var loads_index = 0;
 
 var fadeEffect=function(){
 	return{
@@ -22,27 +22,19 @@ var fadeEffect=function(){
 		tween:function(){
 			if(this.alpha == this.target){
 				clearInterval(this.elem.si);
+				if(loads_index < loads.length - 1){ //if all elements haven't been loaded, continue loading
+					loads_index++; //load the next index
+					fadeEffect.init(loads[loads_index],3,100);
+				}
 			}else{
 				var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
 				this.elem.style.opacity = value / 100;
 				this.elem.style.filter = 'alpha(opacity=' + value + ')';
-				this.alpha = value
+				this.alpha = value;
 			}
 		}
 	}
 }();
-
-
-
-/*
-function fadeIn(){
-
-	document.getElementById("portrait").style.opacity += 0.1;
-	setTimeout(fadeIn,250);
-	alert("THIS IS CALLED");
-};*/
-
-
 
 
 var changeGnome = function(){
@@ -54,12 +46,15 @@ var changeCat = function(){
 var changeShyGuy = function(){
 	document.getElementById("portrait").src = "shyguy_avatar.jpg";
 };
+
+//elements to load - at the end of the last fade in fadeEffect.tween will call itself using the next item in the array
+var loads = new Array("portrait","btn-home","btn-projects","btn-blog","btn-links","btn-contact");
+
+
 window.onload = function(){
-	//fadeIn();
 
-	fadeEffect.init('portrait',3,100);
-
-	//fadeEffect.init('menu_items',1,100);
+	//could you pass "for each x in loads"?
+	fadeEffect.init(loads[loads_index],3,100);
 
 	var home = document.getElementById("btn-home");
 	var proj = document.getElementById("btn-projects");
