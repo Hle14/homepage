@@ -24,7 +24,9 @@ max-height: 100%;
 #portrait{
 	height:auto;
 	width:100%;
-	opacity:0.0; /*will change on page load*/
+	opacity: 0;
+	box-shadow: #000 0em 0em 0em;
+	 /*will change on page load*/
 }
 .menu_name{
 	font-size:40px;
@@ -41,7 +43,7 @@ max-height: 100%;
 	padding-top: 10px;
 }
 .menu_items p:hover{
-	color: DarkOrange
+	color: DarkOrange;
 }
 
 #maincontent{

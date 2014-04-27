@@ -5,66 +5,61 @@ for (var i=0; i<words; i++)
 document.write(gibberish[Math.floor(Math.random()*3)]+" ")
 }
 
-var d = new Date();
-var timer;
-function fadeIn(element_id){
-	//alert("fadeIn called");
-	var element = document.getElementById(element_id);
-	timer = setInterval(fadeShift(element),200);
-};
 
-function fadeShift(element){
-	//alert("fadeShift called");
-	if(element.style.opacity == 1.0)
-	{
-		//clearInterval(timer);
-		clearInterval();
-	} else
-	{
-		element.style.opacity += 0.1;
 
+
+
+var fadeEffect=function(){
+	return{
+		init:function(id, flag, target){
+			this.elem = document.getElementById(id);
+			clearInterval(this.elem.si);
+			this.target = target ? target : flag ? 100 : 0;
+			this.flag = flag || -1;
+			this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
+			this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
+		},
+		tween:function(){
+			if(this.alpha == this.target){
+				clearInterval(this.elem.si);
+			}else{
+				var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
+				this.elem.style.opacity = value / 100;
+				this.elem.style.filter = 'alpha(opacity=' + value + ')';
+				this.alpha = value
+			}
+		}
 	}
-};
+}();
+
+
 
 /*
-var fadeIn = function(element_id){
-	//quadratic function controls alpha level
-	var element = document.getElementById(element_id);
-	var time0 = d.getTime();
-	alert(time0);
-	var x = 0;
-	var alpha = 0;
-	while(x < 1.0) //changes alpha level over time
-	{
-		x = (d.getTime() - time0) / 1000;
-		alpha = (-1*x*x + 2*x);
-		element.style.opacity = alpha;
-	}
-}
-/*
-document.onload = initVars();
+function fadeIn(){
 
-function initVars(){
-	var portrait = document.getElementById("portrait");
+	document.getElementById("portrait").style.opacity += 0.1;
+	setTimeout(fadeIn,250);
+	alert("THIS IS CALLED");
+};*/
 
-	document.getElementById("btn-home").onclick = changeGnome;
-	document.getElementById("btn-projects").onclick = changeCat;
-	document.getElementById("btn-blog").onclick = changeShyGuy;
-}
-*/
+
 
 
 var changeGnome = function(){
 	document.getElementById("portrait").src = "gnome.png";
-}
+};
 var changeCat = function(){
 	document.getElementById("portrait").src = "SC_cat.jpg";
-}
+};
 var changeShyGuy = function(){
 	document.getElementById("portrait").src = "shyguy_avatar.jpg";
-}
+};
 window.onload = function(){
-	fadeIn("portrait");
+	//fadeIn();
+
+	fadeEffect.init('portrait',3,100);
+
+	//fadeEffect.init('menu_items',1,100);
 
 	var home = document.getElementById("btn-home");
 	var proj = document.getElementById("btn-projects");
