@@ -39,6 +39,11 @@ max-height: 100%;
 	bottom:70%;
 	right:5px;
 }
+
+#btn-home,#btn-projects,#btn-blog,#btn-links,#btn-contact{
+	opacity: 0;
+}
+
 .menu_items p{
 	padding-top: 10px;
 }
