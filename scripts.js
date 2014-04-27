@@ -21,19 +21,14 @@ var fadeEffect=function(){
 			this.target = target ? target : flag ? 100 : 0;
 			this.flag = flag || -1;
 			this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
-			if(loads_index==0 || loads_index==1){ //if loading portrait, use slow interval
-				this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
-			} else
-			{
-				this.elem.si = setInterval(function(){fadeEffect.tween()}, 5);
-			}
+			this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
 		},
 		tween:function(){
 			if(this.alpha == this.target){
 				clearInterval(this.elem.si);
 				if(loads_index < loads.length - 1){ //if all elements haven't been loaded, continue loading
 					loads_index++; //load the next index
-					fadeEffect.init(loads[loads_index],1,100);
+					fadeEffect.init(loads[loads_index],3,100);
 				}
 			}else{
 				var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
@@ -57,7 +52,7 @@ var changeShyGuy = function(){
 };
 
 //elements to load - at the end of the last fade in fadeEffect.tween will call itself using the next item in the array
-var loads = new Array("portrait","menu_name","btn-home","btn-projects","btn-blog","btn-links","btn-contact");
+var loads = new Array("portrait","btn-home","btn-projects","btn-blog","btn-links","btn-contact");
 
 
 window.onload = function(){
