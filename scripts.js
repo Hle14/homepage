@@ -38,7 +38,7 @@ var fadeEffect=function(){
 			}
 		}
 	}
-};
+}();
 
 
 var changeGnome = function(){
