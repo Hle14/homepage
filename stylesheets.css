@@ -20,7 +20,9 @@ max-height: 100%;
 	text-align: right;
 	font-family: "Lucida Console"
 }
-
+#btn-home,#btn-projects,#btn-blog,#btn-links,#btn-contact{
+	opacity: 0;
+}
 #portrait{
 	height:auto;
 	width:100%;
