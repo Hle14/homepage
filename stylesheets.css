@@ -12,13 +12,64 @@ max-height: 100%;
 	top: 0;
 	bottom: 0; 
 	left: 0;
-	width: 200px; /*Width of frame div*/
+	/*width: 200px; /*Width of frame div*/
+	width: 100%;
 	height: 100%;
 	overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
 	background: DimGray;
 	color: white;
 	text-align: right;
-	font-family: "Lucida Console"
+	font-family: "Lucida Console";
+	/*animation: readyMenu 5s;*/
+	-webkit-animation: shift 2s;
+}
+
+@keyframes shift
+{
+	from
+	{
+		background: Red;
+	}
+	to
+	{
+		background: DimGray;
+	}
+}
+
+@-webkit-keyframes shift
+{
+	from
+	{
+		background: Red;
+	}
+	to
+	{
+		background: DimGray;
+	}
+}
+
+@keyframes readyMenu
+{
+	from
+	{
+		width:100%;
+	}
+	to
+	{
+		width:200px;
+	}
+}
+
+@-webkit-keyframes readyMenu
+{
+	from
+	{
+		width:100%;
+	}
+	to
+	{
+		width:200px;
+	}
 }
 
 #portrait{
@@ -54,12 +105,22 @@ max-height: 100%;
 #maincontent{
 position: fixed;
 top: 0; 
-left: 200px; /*Set left value to WidthOfFrameDiv*/
+/*left: 200px; /*Set left value to WidthOfFrameDiv*/
 right: 0;
 bottom: 0;
+width: 0%;
 overflow: auto; 
 background: #fff;
 font-family: "Lucida Console"
+}
+
+#loading{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	font-family: "Lucida Console";
 }
 
 div.img
